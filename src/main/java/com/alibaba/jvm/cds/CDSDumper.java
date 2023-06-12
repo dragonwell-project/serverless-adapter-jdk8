@@ -154,7 +154,7 @@ public class CDSDumper {
         command.add("-XX:+DisableAttachMechanism");  // Forbid attachment
         if (info.eager) {
             command.add("-XX:+EagerAppCDS");
-            command.add("-Xbootclasspath/a:" + Paths.get(jdkHome, "lib", "amd64", info.agent).toString());
+            command.add("-Xbootclasspath/a:" + Paths.get(jdkHome, "lib", System.getProperty("os.arch"), info.agent).toString());
         }
         // append classpath if has
         command.add("-cp");
