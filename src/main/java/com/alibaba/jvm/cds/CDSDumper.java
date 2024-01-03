@@ -124,6 +124,8 @@ public class CDSDumper {
                 arg.startsWith("-XX:+UseWisp2") ||  /* CDS in JDK8 can only use bootstrap classloader to load class: lambda early triggered by Wisp would fail dump process.  */
                 arg.startsWith("-Xquickstart") ||
                 arg.startsWith("-agentlib:jdwp") ||  /* remove debuggers */
+                arg.startsWith("-Dcom.sun.management.jmxremote.port") || // remove jmx port
+                arg.startsWith("-Dcom.sun.management.jmxremote.rmi.port") || // remove jmx port
                 arg.startsWith("-Xdebug") ||  /* remove debuggers */
                 arg.startsWith("-Xrunjdwp") ||  /* remove debuggers */
                 arg.startsWith("-javaagent") || /* disable javaagent on the dump step */
